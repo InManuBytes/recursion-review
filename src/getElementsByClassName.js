@@ -9,11 +9,10 @@ var getElementsByClassName = function(className) {
   //console.log("DOC BODY CLASSLIST", document.body.classList);
   function recurse(element) {
     console.log("current element: ", element, typeof element);
-    //if (element.classList === undefined) {
-    console.log("I'm inside the undefined");
-    //return; //will a break statement work?
-    //} else
-    if (element.classList.contains(className)) {
+    if (element.classList === undefined) {
+      console.log("I'm inside the undefined");
+      return; //will a break statement work?
+    } else if (element.classList.contains(className)) {
       elementArray.push(element);
     }
     if (element.childNodes.length) {
